@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+ 
+<body>
+
+<h2>Pass phrase by subhash nethra </h2>
+
+<form>
+    <label for="form1_age">Enter the secret phrase </label>
+    <input type ="password" id="secret_phrase" name="form1_age" value="Let me in"> <br>
+
+    <label for="form1_nick">Enter a phrase </label>
+    <input type ="text" id="phrase" name="form1_nick" autofocus> <br>
+
+    <input type="button" onclick="processPhrase()" value="Check the phrase">
+</form>
+<div class="container">
+    <img src="rabbit.jpg" class="img-thumbnail" alt="rabbit" onclick="newImage();" id="img"
+        style="width: 200px; height: 200px;">
+</div>
+
+<p id="result">This text will be replaced </p>
+
+
+<script> 
+
+var correct=0
+var wrong=0
+var count=0
+function processPhrase (){
+console.log("Getting form values")
+sphrase = document.getElementById("secret_phrase").value
+phrase = document.getElementById("phrase").value
+
+out = document.getElementById("result")
+if(sphrase == phrase){
+    correct = correct +1
+    alert("Access allowed")
+    out.innerHTML = "Correct:" +correct
+} else {
+    wrong = wrong +1
+    alert("Access denied")
+    out.innerHTML = "Wrong:" +wrong
+}
+}
+function newImage() {
+            switch (count) {
+                case 0:
+                    document.getElementById("img").src = "tiger.jpg"
+                    count = count + 1
+                    break;
+                case 1:
+                    document.getElementById("img").src = "rabbit.jpg"
+                    count = count + 1
+                    break;
+                case 2:
+                    document.getElementById("img").src = "eagle.jpg"
+                    count = 0
+                    break;
+            }
+        }
+
+</script>
+
+</body>
+</html> 
